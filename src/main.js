@@ -3,7 +3,7 @@
  * @Author: Tank
  * @GitHub: https://github.com/zhihuifanqiechaodan
  * @Date: 2019-02-16 11:16:57
- * @LastEditTime: 2019-02-16 17:05:15
+ * @LastEditTime: 2019-02-17 09:55:01
  */
 /**
  * Node简介:
@@ -38,7 +38,10 @@
  * 在node中每一个文件都是一个独立的模块, 每个模块的变量或方法都是不对外公开的, 要公开那一个都是由自己决定的
  * 在node中, 使用require()来导入模块(这是一个全局变量)
  * node中顶层对象是global
+ *  在node中,模块中对外暴露的变量或者方法通过module.exports = {} 或者 exports.XXX来导出
  */ 
 let common = require('./common')
-console.log(common.b)
-console.log(common.a)
+console.log(common.fn())
+/**
+ * AMD 和 CMD 的规范
+ */

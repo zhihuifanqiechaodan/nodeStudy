@@ -3,12 +3,12 @@
  * @Author: Tank
  * @GitHub: https://github.com/zhihuifanqiechaodan
  * @Date: 2019-01-18 14:17:34
- * @LastEditTime: 2019-01-19 13:34:58
+ * @LastEditTime: 2019-02-17 08:52:48
  -->
 
-## 初步渐进的学习webpack的使
+## 初步渐进的学习node的用法
 
-#### 关于webpack
+#### 关于node
 
 借助webpack这个前端自动化构建工具, 可以完美实现资源的合并/打包/压缩/混淆等诸多功能
 
