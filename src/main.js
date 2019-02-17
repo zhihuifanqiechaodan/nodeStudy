@@ -3,7 +3,7 @@
  * @Author: Tank
  * @GitHub: https://github.com/zhihuifanqiechaodan
  * @Date: 2019-02-16 11:16:57
- * @LastEditTime: 2019-02-17 09:55:01
+ * @LastEditTime: 2019-02-17 14:27:38
  */
 /**
  * Node简介:
@@ -39,9 +39,39 @@
  * 在node中, 使用require()来导入模块(这是一个全局变量)
  * node中顶层对象是global
  *  在node中,模块中对外暴露的变量或者方法通过module.exports = {} 或者 exports.XXX来导出
- */ 
+ */
 let common = require('./common')
-console.log(common.fn())
+console.log(common)
 /**
  * AMD 和 CMD 的规范
+ */
+/**--------------------------------------------我是分割线------------------------------------------------ */
+/**
+ * 事件循环顺序
+ *  同步代码执行结束后, 开始异步执行(也是有优先级的)
+ *  函数都是同步执行的, 真正异步的是他们的回调函数
+ *  macro-task队列: script(全部的代码) > setInterval || setTimeout > setImmediate I/O (执行优先级)
+ *  注意: setInterval和setTimeout 这俩谁先注册谁的优先级高
+ *  micro-task队列: process.nextTick > Promise的then方法(执行优先级)
+ */
+
+/**
+ * node.js在执行初期相当于执行了一个while(true){ *事件循环*
+ *  第一步: 执行 => macro-task队列中script(全部代码)
+ *  第二步: 清空 => micro-task队列(执行这里所有的代码) 
+ *  接下来: 执行 => macro-task队列中setInterval(所有的setInterval或者所有的setTimeout, 这俩谁先注册就先执行谁)
+ *  仍  然: 清空 => micro-task队列(执行这里所有的代码)
+ *  接下来: 执行 => macro-task队列中setInterval(所有的setImmediate方法)
+ *  仍  然: 清空 => micro-task队列(执行这里所有的代码)
+ *  接下来: 执行 => macro-task队列中setInterval(所有的I/O)
+ *  仍  然: 清空 => micro-task队列(执行这里所有的代码)
+ *  注  意: 如果micro-task队列没有需要执行的代码,则继续执行macro-task队列中的代码
+ *  注  意: 如果异步嵌套异步同样按照以上顺序
+ *  请执行callback.js文件查看示例(执行书序)
+ *  src目录下执行 node callback.js
+ * }
+ * 异步执行优先级 process.nextTick > Promise.then > setTimeout/setTimeval > setImmediate > I/O
+ * 
+ * 事件观察者:
+ *  idle观察者 > I/O观察者 > check观察者
  */
