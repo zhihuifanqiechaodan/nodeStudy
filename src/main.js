@@ -41,7 +41,7 @@
  * node中顶层对象是global
  *  在node中,模块中对外暴露的变量或者方法通过module.exports = {} 或者 exports.XXX来导出
  */
-let common = require('./common')
+let common = require('./ExampleCode/common')
 console.log(common)
 /**
  * AMD 和 CMD 的规范
