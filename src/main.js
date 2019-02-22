@@ -3,11 +3,12 @@
  * @Author: Tank
  * @GitHub: https://github.com/zhihuifanqiechaodan
  * @Date: 2019-02-16 11:16:57
- * @LastEditTime: 2019-02-17 14:27:38
+ * @LastEditTime: 2019-02-17 16:04:21
  */
 /**
  * Node简介:
  *  node是构建在chrome V8 引擎上的JavaScript 运行环境
+ *  node.js采用的是common.js的规范
  * 
  * Node 和 chrome 的区别:
  *  架构一样, 都是基于事件驱动的异步架构!
@@ -74,4 +75,34 @@ console.log(common)
  * 
  * 事件观察者:
  *  idle观察者 > I/O观察者 > check观察者
+ */
+/**--------------------------------------------我是分割线------------------------------------------------ */
+/**
+ * npm 是node.js包的管理器
+ * 在使用node的时候第一步要初始化项目环境 npm init -y默认创建包的入口文件
+ * 使用 npm install koa --save 下载一个包到生产环境依赖
+ */
+/**
+ * koa是一个框架,帮助我们搭建web服务的
+ */
+const koa = require('koa') //这里导入的koa是一个构造函数
+const app = new koa() // 执行构造函数生成一个实例, 也可以写成 const app = new koa
+app.use(async (ctx) => {
+    ctx.body = '这是后台返回的数据'
+})
+// 监听到3030端口
+app.listen(3030)
+/**--------------------------------------------我是分割线------------------------------------------------ */
+/**
+ * 如何自己上线一个包
+ * 第一步: 登录 npm 官网注册一个自己的帐号
+ * 第二步: 新建一个文件夹, 初始化环境 npm init -y (配置选项后期自己根据需要更改)
+ * 第三步: 新建一个index.js文件, 内容输入module.exports = "上传了一个自己的包"
+ * 第四步: 在命令行输入 npm login
+ *      4.1: 输入你 npm 注册的用户名
+ *      4.2: 输入你 npm 注册的密码
+ *      4.3: 输入你 npm 注册的邮箱
+ *      注意: 以上三步操作完成后如果显示 Logged in as zhihuifanqiechaodan on https://registry.npmjs.org/.
+ *      说明你登录成功了
+ * 第五步: 在你要上传的文件目录下的命令行输入 npm publish 等待上传完成
  */

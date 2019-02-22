@@ -1,41 +1,41 @@
 <!--
- * @Description: 
+ * @Description:
  * @Author: Tank
  * @GitHub: https://github.com/zhihuifanqiechaodan
  * @Date: 2019-01-18 14:17:34
- * @LastEditTime: 2019-02-17 08:52:48
+ * @LastEditTime: 2019-02-22 08:46:22
  -->
 
-## 初步渐进的学习node的用法
+## 初步渐进的学习 node 的用法
 
-#### 关于node
+#### 关于 node
 
-借助webpack这个前端自动化构建工具, 可以完美实现资源的合并/打包/压缩/混淆等诸多功能
+简单的说 Node.js 就是运行在服务端的 JavaScript。
 
-根据官网的图片介绍webpack打包的过程
+Node.js 是一个基于 Chrome JavaScript 运行时建立的一个平台。
 
-[wenpack官网](<https://www.webpackjs.com/> )
+Node.js 是一个事件驱动 I/O 服务端 JavaScript 环境，基于 Google 的 V8 引擎，V8 引擎执行 Javascript 的速度非常快，性能非常好。
 
-#### 安装webpack的两种方式
+#### 安装 Node.js
 
-1. 在命令行运行以下代码, 全局安装webpack,这样就能在全局使用webpack的命令
+[Node.js 中文网](http://nodejs.cn//)
 
-   ```javascript
-   npm i webpack -g
-   ```
-
-2. 在项目根目录中打开命令行窗口/终端运行, 安装到项目依赖
+2. 打开命令窗口输入以下代码检查 Node 是否成功安装, Node 安装时会同时把 NPM 安装上
 
    ```javascript
-   npm u webpack --save-dev 使用webpack打包构建项目
+   node -v 出现版本号说明 node 安装成功
    ```
 
+   ```javascript
+   npm -v 出现版本号说明 npm 安装成功
+   ```
 
-#### 使用webpack打包构建项目
+#### 使用 npm 管理我们的项目依赖
 
-1. 在命令行运行以下代码, 初始化项目, 使用npm管理项目中的依赖包
+1. 在命令行运行以下代码, 初始化项目, 使用 npm 管理项目中的依赖包
 
    ```javascript
    npm init -y
    ```
-2. 剩余关于各个配置介绍请查看main.js文件,有详细注释.
+
+2. 剩余关于各个配置介绍请查看 main.js 文件,有详细注释.
