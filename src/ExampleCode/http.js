@@ -3,13 +3,13 @@
  * @Author: Tank
  * @GitHub: https://github.com/zhihuifanqiechaodan
  * @Date: 2019-03-20 10:02:57
- * @LastEditTime: 2019-03-20 17:02:31
+ * @LastEditTime: 2019-03-21 10:06:32
  */
 const http = require('http')
 const request = require('http').request
 const fs = require('fs')
 
-
+// 代理跨域
 const fn = response => {
     const options = {
         host: "localhost",
